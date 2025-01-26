@@ -6,7 +6,7 @@ from typing import Dict, List
 from pathlib import Path
 from deployflow.core import colors
 from deployflow.core.ai import get_ai
-from deployflow.core.analysis.fs import identify_target, copy_target
+from deployflow.core.analysis.fs import identify_target, copy_target, _onerror
 from deployflow.core.deployment.actions import execute_command, write_file
 from deployflow.core.deployment.prompts import STAGE_PROMPT, SYSTEM_PROMPT
 from deployflow.core.utils import fatal
@@ -34,7 +34,7 @@ def deploy_target(repo, task, evidences: Dict[str, List[str]]):
                 fatal("Target directory cannot be a subdirectory of the repository (or vice versa)")
         copy_target(repo, target_dir + "/src")
         shutil.make_archive(target_dir + "/src", 'zip', target_dir + "/src")
-        shutil.rmtree(target_dir + "/src")
+        shutil.rmtree(target_dir + "/src", onerror=_onerror)
     print("Creating ssh keypair (this will be used to access the server)")
     execute_command(target_dir, f'ssh-keygen -t rsa -b 4096 -C "{repo_name}" -f id_rsa -N ""')
     execute_command(target_dir, 'chmod 400 id_rsa')

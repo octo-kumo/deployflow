@@ -32,6 +32,10 @@ def execute_command(target_folder, command) -> tuple[str, str]:
             print(f'{colors.RED}Error executing command: {result.stderr}{colors.ENDC}')
         else:
             print(f'{colors.GREEN}Command executed successfully{colors.ENDC}')
+        if len(result.stdout or '') > 1000:
+            result.stdout = result.stdout[:500] + f"\n<<Truncated output>>\n" + result.stdout[-500:]
+        if len(result.stderr or '') > 1000:
+            result.stderr = result.stderr[:500] + f"\n<<Truncated output>>\n" + result.stderr[-500:]
         return result.stdout, result.stderr
     except subprocess.CalledProcessError as e:
         print(f'{colors.RED}Error executing command: {e.stderr}{colors.ENDC}')

@@ -26,7 +26,7 @@ User specified task:
 """.strip()
 
 
-def _prompt_file_list(evidences, directory, files, extra_files=None):
+def _prompt_file_list(evidences, files, extra_files=None):
     if extra_files is None:
         extra_files = []
     extra_files_p = ""
@@ -34,8 +34,8 @@ def _prompt_file_list(evidences, directory, files, extra_files=None):
         extra_files_p += f"=== file: {name}\n{content}\n===\n"
     return f"""
 Analyze the following directory for deployment evidence:
-=== folder: {directory}
-{json.dumps(files)}
+=== checked folders
+{'\n'.join(f'{key}: {json.dumps(value)}' for key, value in files.items())}
 ===
 {extra_files_p}Current Evidence:
 {json.dumps(evidences, indent=2)}
@@ -44,9 +44,11 @@ Analyze the following directory for deployment evidence:
 """.strip()
 
 
-def _prompt_file_content(evidences, filename, file):
+def _prompt_file_content(evidences, filename, file, files):
     return f"""
 Analyze file contents for deployment evidence:
+=== checked folders
+{'\n'.join(f'{key}: {json.dumps(value)}' for key, value in files.items())}
 === file: {filename}
 {file}
 ===
@@ -78,23 +80,26 @@ def ai_analysis(evidences: Dict[str, List[str]], ls: callable, cat: callable, ta
     target = ""
     question = ""
     print(colors.BOLD + "Starting AI Analysis" + colors.ENDC)
+    files = dict()
     while True:
         if mode == "read_dir":
             target_files = ls(target)
+            files[target if target else '/'] = target_files
+            evidences["checked_folders"] = list(files.keys())
             print(
                 f"\t{colors.YELLOW}ai is reading directory {target if target else '/'} -> {target_files}{colors.ENDC}")
             important_files = [(name, cat(name)) for name in ['README', 'README.md', 'README.txt', 'Dockerfile'] if
                                name in target_files]
             messages = [
                 {"role": "system", "content": _prompt_system(task)},
-                {"role": "user", "content": _prompt_file_list(evidences, target, target_files, important_files)},
+                {"role": "user", "content": _prompt_file_list(evidences, files, important_files)},
             ]
         elif mode == "read_file":
             target_content = cat(target)
             print(f"\t{colors.YELLOW}ai is reading file {target} -> {len(target_content)} bytes{colors.ENDC}")
             messages = [
                 {"role": "system", "content": _prompt_system(task)},
-                {"role": "user", "content": _prompt_file_content(evidences, target, target_content)},
+                {"role": "user", "content": _prompt_file_content(evidences, target, target_content, files)},
             ]
         elif mode == "ask":
             logger.debug(f"ai is asking a question: {question}")

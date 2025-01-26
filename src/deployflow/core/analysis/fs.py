@@ -55,7 +55,7 @@ def _init_repo(repo_url: str) -> tuple[Callable[[str | None], list[str]], Callab
                 f.write(f'/{file_path}\n')
             repo.git.config('core.sparseCheckout', 'true')
             repo.git.checkout()
-            with open(os.path.join(temp_dir, file_path), 'r') as f:
+            with open(temp_dir + "/" + file_path, 'r', encoding='utf8') as f:
                 content = f.read()
             return content
 
@@ -69,20 +69,22 @@ def _init_repo(repo_url: str) -> tuple[Callable[[str | None], list[str]], Callab
 
 
 def _init_dir(dir_path: str) -> tuple[Callable[[str | None], list[str]], Callable[[str], str], Callable[[], None]]:
+    _dir = dir_path if dir_path.endswith('/') else dir_path + '/'
+
     def ls(subdir: str = None) -> list[str]:
-        items = os.listdir(os.path.join(dir_path, subdir) if subdir else dir_path)
+        items = os.listdir(_dir + subdir if subdir else _dir)
         if subdir:
             subdir = subdir if subdir.endswith('/') else subdir + '/'
             items = [subdir + item for item in items]
             print(items)
 
         def is_dir(name):
-            return os.path.isdir(os.path.join(dir_path, name))
+            return os.path.isdir(_dir + name)
 
         return _process_ls_items(items, is_dir)
 
     def cat(file_path: str) -> str:
-        with open(os.path.join(dir_path, file_path), 'r') as f:
+        with open(_dir + file_path, 'r', encoding='utf8') as f:
             return f.read()
 
     def close():

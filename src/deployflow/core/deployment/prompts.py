@@ -11,6 +11,9 @@ RULES:
 6. Enable SSH via public key.
 7. Source code is provided in a zip 'src.zip', the deployment process should upload and unzip this file on the server.
 
+Terraform provider mapping override:
+docker -> kreuzwerker/docker
+add (terraform { required_providers { docker = { source  = "kreuzwerker/docker" version = "3.0.2" } } })
 ===
 Evidence gathered so far:
 %%EVIDENCE%%
@@ -44,17 +47,11 @@ terraform [command] [options]
 ----------------
 9. After running a terraform command, you will be provided the output of the command.
 
-10. When presented with 'yes' or 'no' questions, carefully consider the evidence and respond with the following format:
-----------------
-yes/no
-[summary/reasoning]
-----------------
-
-11. Response formats are delimited by '----------------', DO NOT INCLUDE THE DELIMITER in your response.
-12. [summary/reasoning] should be a brief explanation of your reasoning behind the commands you are running, it should one single line at the end of your response.
+10. Response formats are delimited by '----------------', DO NOT INCLUDE THE DELIMITER in your response.
+11. [summary/reasoning] should be a brief explanation of your reasoning behind the commands you are running, it should one single line at the end of your response.
   - they should avoid technical jargon, and be easy to understand by someone who is not familiar with deployment.
 
-13. When the application have been deployed, you should determine the real public ip and respond with the following format:
+12. When the application have been deployed, you should determine the real public ip and respond with the following format:
 ----------------
 <<COMPLETION>>
 [url with actual public ip]
@@ -62,7 +59,7 @@ yes/no
 [instructions to access the deployed application]
 ----------------
 
-14. If you think the error is critical, and you cannot solve it, you should provide the following format:
+13. If you think the error is critical, and you cannot solve it, you should provide the following format:
 ----------------
 <<ERROR>>
 [error message]
@@ -78,7 +75,7 @@ STAGE_PROMPT = [
     Source code of the project has been zipped and provided as 'src.zip', you should unzip this file on the server using file provisioner.
     auto-deploy.sh will be created later, you should also upload this file to the server using file provisioner.
     auto-deploy.sh should be ran on the server to automate the deployment process.
-    Use remote-exec provisioner to unzip the source code to ~/app and run the auto-deploy.sh script.
+    Use remote-exec provisioner to unzip the source code to ~/ directly, and run the auto-deploy.sh script.
     Remember to use dos2unix to convert the auto-deploy.sh file to Unix format.
 
     Security group name should have random suffix of 4 bytes, hex encoded.
@@ -90,6 +87,7 @@ STAGE_PROMPT = [
     """# Auto-deployment script
     In this stage, you will create a script to automate the deployment process.
     Remember to cd into ~/app before running the build and deployment commands.
+    auto-deploy.sh should also install any necessary dependencies before running the deployment commands, this includes interpreters and package managers such as python, pip, bun, npm etc.
     PUBLIC_IP and PORT environment variables must be set before running commands.
 
     Reply with auto-deploy.sh content and reasoning.

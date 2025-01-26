@@ -208,3 +208,9 @@ def analyze_repository(target: str, task: str = "") -> Dict[str, List[str] | str
 
 1. The AI will be given SSH access to the server to deploy the application.
     - It will be able to read errors and fix them on the fly.
+
+# Demo
+
+![img2.png](img/img2.png)
+![img_1.png](img/img_1.png)
+![img.png](img/img.png)

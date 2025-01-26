@@ -23,7 +23,8 @@ Response schema:
     "update_commands": [], // Necessary changes to files
     "deployment_commands": [], // Runtime commands
     "notes": [] // Warnings/conflicts/notes
-    "checked_paths": [], // Folders/files already checked
+    "checked_paths": [], // files already checked
+    "checked_folders": [] // folders already checked
   },
   "next_task": {
     "mode": "read_file|read_dir|ask|deploy|halt", // Next action, deploy to finish
@@ -62,4 +63,6 @@ Instructions:
 18. All commands arguments should be properly escaped and quoted.
 19. Commands are to be sorted in order of execution.
 20. Do not repeatedly check the same files or folders.
+21. History of previously checked folders are stored in checked_folders.
+22. Folders end with /, files do not.
 """

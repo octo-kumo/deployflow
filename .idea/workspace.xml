@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14e3e35f-0e17-4597-b658-5e2e67a32e69" name="Changes" comment="updated README">
+      <change afterPath="$PROJECT_DIR$/img/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/img2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/img_1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/deployflow/core/analysis/ai_analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/deployflow/core/analysis/ai_analyzer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/deployflow/core/analysis/fs.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/deployflow/core/analysis/fs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/deployflow/core/analysis/prompts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/deployflow/core/analysis/prompts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/deployflow/core/deployment/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/deployflow/core/deployment/actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/deployflow/core/deployment/ai_deployer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/deployflow/core/deployment/ai_deployer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/deployflow/core/deployment/prompts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/deployflow/core/deployment/prompts.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +73,7 @@
       <recent name="C:\Users\zy\Documents\GitHub\deployflow\test\analysis" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zy\Documents\GitHub\deployflow\img" />
       <recent name="C:\Users\zy\Documents\GitHub\deployflow\test\analysis" />
       <recent name="C:\Users\zy\Documents\GitHub\deployflow\src\deployflow\core\analysis" />
     </key>
@@ -184,7 +194,10 @@
       <updated>1737817366867</updated>
       <workItem from="1737817368165" duration="1212000" />
       <workItem from="1737818954482" duration="48392000" />
-      <workItem from="1737870881604" duration="1621000" />
+      <workItem from="1737870881604" duration="1643000" />
+      <workItem from="1737873383595" duration="2147000" />
+      <workItem from="1737876545602" duration="1229000" />
+      <workItem from="1737882795502" duration="3277000" />
     </task>
     <task id="LOCAL-00001" summary="a">
       <option name="closed" value="true" />
