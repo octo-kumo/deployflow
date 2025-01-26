@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14e3e35f-0e17-4597-b658-5e2e67a32e69" name="Changes" comment="a">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/deployflow/core/deployment/ai_deployer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/deployflow/core/deployment/ai_deployer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/deployflow/core/deployment/prompts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/deployflow/core/deployment/prompts.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +184,7 @@
       <option name="presentableId" value="Default" />
       <updated>1737817366867</updated>
       <workItem from="1737817368165" duration="1212000" />
-      <workItem from="1737818954482" duration="45620000" />
+      <workItem from="1737818954482" duration="46025000" />
     </task>
     <task id="LOCAL-00001" summary="a">
       <option name="closed" value="true" />

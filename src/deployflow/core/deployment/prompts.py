@@ -79,6 +79,7 @@ STAGE_PROMPT = [
     auto-deploy.sh will be created later, you should also upload this file to the server using file provisioner.
     auto-deploy.sh should be ran on the server to automate the deployment process.
     Use remote-exec provisioner to unzip the source code to ~/app and run the auto-deploy.sh script.
+    Remember to use dos2unix to convert the auto-deploy.sh file to Unix format.
 
     Security group name should have random suffix of 4 bytes, hex encoded.
     Key pair name should have random suffix of 4 bytes, hex encoded.

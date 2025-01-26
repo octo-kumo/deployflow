@@ -71,7 +71,7 @@ def deploy_target(repo, task, evidences: Dict[str, List[str]]):
             else:
                 fatal("AI did not provide terraform configuration file 'main.tf'")
             print()
-            print('-' * 20)
+            print()
             print(colors.BLUE + res_text.split('\n')[-1] + colors.ENDC)
             std, err = execute_command(target_dir, 'terraform init')
             if err.strip():
@@ -89,7 +89,7 @@ def deploy_target(repo, task, evidences: Dict[str, List[str]]):
                 if file_name != "auto-deploy.sh":
                     fatal(f"AI provided wrong auto-deploy script file name '{file_name}'")
                 print()
-                print('-' * 20)
+                print()
                 print(colors.BLUE + res_text.split('\n')[-1] + colors.ENDC)
                 write_file(target_dir, file_name, file_content)
             else:
@@ -102,19 +102,19 @@ def deploy_target(repo, task, evidences: Dict[str, List[str]]):
             })
         elif '<<COMPLETION>>' in res_text:
             print()
-            print('-' * 20)
+            print()
             print(colors.GREEN + res_text + colors.ENDC)
             break
         elif '<<ERROR>>' in res_text:
             print()
-            print('-' * 20)
+            print()
             print(colors.RED + res_text + colors.ENDC)
             break
         else:
             file_write = re.search(CODE_REGEX, res_text)
             shell_command = re.search(SHELL_REGEX, res_text)
             print()
-            print('-' * 20)
+            print()
             print(colors.BLUE + res_text.split('\n')[-1] + colors.ENDC)
             if file_write:
                 file_name, file_content = file_write.groups()
