@@ -1,0 +1,36 @@
+{
+  "target": "aws",
+  "region": "us-east-1",
+  "instance_type": "t2.micro",
+  "frameworks": [
+    "Flask"
+  ],
+  "platform": [
+    "Python"
+  ],
+  "config_files": [],
+  "ports": [
+    5000
+  ],
+  "build_commands": [
+    "python -m venv venv",
+    "source venv/bin/activate",
+    "pip install -r app/requirements.txt"
+  ],
+  "update_commands": [
+    "sed -i 's/127.0.0.1/0.0.0.0/g' app/app.py",
+    "sed -i 's/5000/${PORT}/g' app/app.py"
+  ],
+  "deployment_commands": [
+    "cd app",
+    "python app.py"
+  ],
+  "notes": [
+    "The Flask app is configured to run on port 5000 by default. This will be replaced with the provided PORT environment variable during deployment.",
+    "The app binds to 127.0.0.1 by default, which is updated to 0.0.0.0 to allow external access.",
+    "No hardcoded URLs or IP addresses were found in the README.md file. Further analysis of the app/ directory is required to confirm no hardcoded values exist in other files.",
+    "The app/static/ and app/templates/ directories may contain static assets or HTML templates that could have hardcoded URLs or IP addresses. These need to be checked for any hardcoded values.",
+    "The app/static/style.css file was analyzed and no hardcoded URLs or IP addresses were found.",
+    "The app/templates/index.html file was analyzed and no hardcoded URLs or IP addresses were found."
+  ]
+}

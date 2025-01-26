@@ -1,0 +1,16 @@
+[project]
+name = "deployflow"
+version = "0.0.1"
+description = "AutoDeployment Chat System"
+authors = [{ name = "Yun", email = "yun@yun.ng" }]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "typer",
+    "openai",
+    "requests",
+    "GitPython"
+]
+
+[project.scripts]
+deployflow = "deployflow.cli:app"
