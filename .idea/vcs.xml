@@ -2,9 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/deployflow/core/analysis/helloworldgit1719899520614353744" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/deployflow/core/analysis/helloworldgit306023774561848179" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/deployflow/core/analysis/helloworldgit469106637728468533" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/deployflow/core/analysis/helloworldgit696262441492104524" vcs="Git" />
   </component>
 </project>
