@@ -203,3 +203,8 @@ def analyze_repository(target: str, task: str = "") -> Dict[str, List[str] | str
     - Fixed
 4. The AI does not generate correct JSON for the evidence file.
     - Fixed
+
+# Future Work
+
+1. The AI will be given SSH access to the server to deploy the application.
+    - It will be able to read errors and fix them on the fly.
