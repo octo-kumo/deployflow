@@ -4,39 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14e3e35f-0e17-4597-b658-5e2e67a32e69" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployflow.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evidences_.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/__main__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/cli.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/core/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/core/ai.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/core/analysis/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/core/analysis/ai_analyzer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/core/analysis/analyze.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/core/analysis/fs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/core/analysis/prompts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/core/colors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/core/deployment/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/core/deployment/actions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/core/deployment/ai_deployer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/core/deployment/prompts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/core/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/deployflow/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/analysis/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/analysis/test_analysis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/analysis/test_fs.py" afterDir="false" />
+    <list default="true" id="14e3e35f-0e17-4597-b658-5e2e67a32e69" name="Changes" comment="a">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,8 +182,17 @@
       <option name="presentableId" value="Default" />
       <updated>1737817366867</updated>
       <workItem from="1737817368165" duration="1212000" />
-      <workItem from="1737818954482" duration="45579000" />
+      <workItem from="1737818954482" duration="45620000" />
     </task>
+    <task id="LOCAL-00001" summary="a">
+      <option name="closed" value="true" />
+      <created>1737866855778</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737866855778</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +200,10 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="a" />
+    <option name="LAST_COMMIT_MESSAGE" value="a" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/deployflow$fs.coverage" NAME="fs Coverage Results" MODIFIED="1737824901443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/deployflow/core/analysis" />
